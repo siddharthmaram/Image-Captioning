@@ -22,8 +22,8 @@ INPUT_CSV = "test/metadata.csv"      # CSV file with column: image
 OUTPUT_CSV = "image_captions2.csv"
 
 MODEL_ID = (
-    "projects/gemini-benchmarking-476114"
-    "/locations/us-central1"
+    "YOUR-PROJECT-Name"
+    "LOCATION"
     "/publishers/google"
     "/models/gemini-2.5-flash"
 )
@@ -50,7 +50,7 @@ def safe_call(image_path):
     retries = 3
     for attempt in range(retries):
         try:
-            client = genai.Client(vertexai=True, project="gemini-benchmarking-476114", location="us-central1")
+            client = genai.Client(vertexai=True, project="YOUR-PROJECT-NAME", location="LOCATION")
             return call_with_inline(client, image_path)
         except (TooManyRequests, InternalServerError) as e:
             wait = 2 ** attempt
