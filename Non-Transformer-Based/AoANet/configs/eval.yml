@@ -1,0 +1,16 @@
+model: log/log_flickr_aoa/model_best.pdparams
+infos_path: log/log_flickr_aoa/infos_aoanet_best.pkl
+
+input_json: data/customtalk.json
+input_label_h5: data/customtalk_label.h5
+input_fc_dir: data/customtalk_fc
+input_att_dir: data/customtalk_att
+# input_box_dir: data/cocobu_box
+
+dump_images: 0
+dump_json: 1
+num_images: -1
+language_eval: 1
+beam_size: 3
+batch_size: 100
+split: test
