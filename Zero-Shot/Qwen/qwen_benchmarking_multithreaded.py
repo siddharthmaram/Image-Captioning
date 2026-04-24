@@ -72,7 +72,7 @@ def prepare_inputs(img_path):
         return img_path, e
 
 # Preprocess in threads (I/O and CPU)
-print("🧩 Preprocessing images in parallel...")
+print("Preprocessing images in parallel...")
 prepared = []
 with ThreadPoolExecutor(max_workers=8) as executor:
     futures = [executor.submit(prepare_inputs, img) for img in images]
