@@ -39,7 +39,3 @@ class Vocab:
             if w=='<eos>': break
             if w not in ('<pad>','<bos>'): words.append(w)
         return ' '.join(words)
-
-# vocab = Vocab(cfg.MIN_WORD_FREQ).build(list(train_df2['caption']))
-# with open(os.path.join(cfg.OUT_DIR,'vocab.json'),'w') as f: json.dump(vocab.w2i, f)
-# print('Vocab size:', len(vocab.w2i))

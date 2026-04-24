@@ -11,7 +11,7 @@ class EncoderCNN(nn.Module):
             net = models.resnet101(weights=models.ResNet101_Weights.DEFAULT)
         else:
             net = models.resnet50(weights=models.ResNet50_Weights.DEFAULT)
-        modules = list(net.children())[:-2]  # keep conv5 features
+        modules = list(net.children())[:-2]
         self.cnn = nn.Sequential(*modules)
         self.adapt = nn.Conv2d(2048, 2048, kernel_size=1)
         if freeze:

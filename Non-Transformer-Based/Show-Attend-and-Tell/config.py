@@ -2,10 +2,6 @@ from dataclasses import dataclass
 
 @dataclass
 class CFG:
-    DATASET_ROOT: str = "/kaggle/input/split-10k-dataset"  # <-- EDIT if needed
-    USE_FOLDER_WITH_SPACE: str = "Split Dataset"              # as in your screenshot
-    USE_DESCRIPTION: str = "description_b.csv"                # non gif/webp file
-
     IMG_SIZE: int = 256
     CROP_SIZE: int = 224
 
@@ -17,7 +13,7 @@ class CFG:
     ATT_DIM: int = 512
 
     BATCH_SIZE: int = 64
-    EPOCHS: int = 10
+    EPOCHS: int = 50
     LR: float = 5e-5
     CLIP_GRAD: float = 5.0
 
